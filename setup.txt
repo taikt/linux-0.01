@@ -1,0 +1,15 @@
+https://askubuntu.com/questions/138140/how-do-i-install-qemu
+qemu-system-i386 -hdb hd_oldlinux.img -fda linux0.01-3.5.img -boot a
+
+--install gcc 4.4
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get install gcc-4.4
+sudo apt-get install g++-4.4
+dpkg --list | grep compiler
+ls -lh /usr/bin/gcc*
+ls -lh /usr/bin/g++*
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.4 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.4
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 40 --slave /usr/bin/g++ g++ /usr/bin/g++-5
+sudo update-alternatives --config gcc
+gcc -v
