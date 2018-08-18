@@ -100,4 +100,4 @@ init/main.o : init/main.c include/unistd.h include/sys/stat.h \
   include/stdarg.h include/fcntl.h 
 
 run: Image
-	qemu -hdb ../hd_oldlinux.img -fda $< -boot order=ac
+	qemu-system-i386 -hdb hd_oldlinux.img -fda $< -boot a
