@@ -13,3 +13,19 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.4 60 --slave 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 40 --slave /usr/bin/g++ g++ /usr/bin/g++-5
 sudo update-alternatives --config gcc
 gcc -v
+
+Note: if gcc-4.4 is not found
+Add lines to /etc/apt/sources.list
+
+deb http://vn.archive.ubuntu.com/ubuntu/ trusty main universe
+deb http://vn.archive.ubuntu.com/ubuntu/ trusty-updates main universe
+
+and...
+sudo apt-get update
+(https://askubuntu.com/questions/789179/how-to-install-gcc-4-4-on-ubuntu-16-04)
+
+--compile on ubuntu 64bit
+--- bits/libc-header-start.h: No such file
+https://bugs.launchpad.net/ubuntu/+source/xen/+bug/1725390
+
+
